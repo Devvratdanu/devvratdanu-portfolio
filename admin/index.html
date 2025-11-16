@@ -3,9 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>CMS Admin</title>
+
+    <!-- Load Decap CMS -->
+    <link rel="stylesheet" href="https://unpkg.com/decap-cms@latest/dist/decap-cms.css" />
+    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </head>
+
   <body>
-    <!-- Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+
+      CMS.init({
+        config: '/admin/config.yml'
+      });
+    </script>
   </body>
 </html>
