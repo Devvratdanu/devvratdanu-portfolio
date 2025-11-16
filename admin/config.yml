@@ -1,4 +1,3 @@
-
 backend:
   name: git-gateway
   branch: main
@@ -7,89 +6,111 @@ media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
-
   - name: "hero"
-    label: "Homepage Hero"
-    file: "content/hero.json"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Tagline", name: "tagline", widget: "string"}
-      - {label: "Profile Photo", name: "photo", widget: "image"}
-      - {label: "Resume (PDF)", name: "resume", widget: "file"}
+    label: "Hero Section"
+    files:
+      - file: "content/hero.json"
+        label: "Hero Content"
+        name: "hero"
+        fields:
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+          - { label: "Resume Button Text", name: "resume_text", widget: "string" }
 
   - name: "about"
     label: "About Me"
-    file: "content/about.json"
-    fields:
-      - {label: "Text", name: "text", widget: "text"}
+    files:
+      - file: "content/about.json"
+        label: "About Content"
+        name: "about"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
 
   - name: "skills"
     label: "Skills"
-    file: "content/skills.json"
-    fields:
-      - label: "Skills"
+    files:
+      - file: "content/skills.json"
+        label: "Skills List"
         name: "skills"
-        widget: "list"
         fields:
-          - {label: "Skill", name: "skill", widget: "string"}
-          - {label: "Level (%)", name: "level", widget: "number"}
-          - {label: "Icon", name: "icon", widget: "image"}
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Level (%)", name: "level", widget: "number" }
 
   - name: "timeline"
-    label: "Experience & Education Timeline"
-    file: "content/timeline.json"
-    fields:
-      - label: "Items"
+    label: "Experience & Education"
+    files:
+      - file: "content/timeline.json"
+        label: "Timeline Entries"
         name: "timeline"
-        widget: "list"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Place", name: "place", widget: "string"}
-          - {label: "Year", name: "year", widget: "string"}
+          - label: "Entries"
+            name: "entries"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Period", name: "period", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
 
   - name: "certificates"
     label: "Certificates"
-    file: "content/certificates.json"
-    fields:
-      - label: "Certificates"
+    files:
+      - file: "content/certificates.json"
+        label: "Certificates List"
         name: "certificates"
-        widget: "list"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Issuer", name: "issuer", widget: "string"}
-          - {label: "Date", name: "date", widget: "string"}
-          - {label: "Certificate File", name: "file", widget: "file"}
+          - label: "Certificates"
+            name: "certificates"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Issuer", name: "issuer", widget: "string" }
+              - { label: "Year", name: "year", widget: "string" }
 
   - name: "projects"
     label: "Projects"
-    file: "content/projects.json"
-    fields:
-      - label: "Projects"
+    files:
+      - file: "content/projects.json"
+        label: "Projects List"
         name: "projects"
-        widget: "list"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Excerpt", name: "excerpt", widget: "text"}
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Link", name: "link", widget: "string", required: false }
 
   - name: "testimonials"
     label: "Testimonials"
-    file: "content/testimonials.json"
-    fields:
-      - label: "Testimonials"
+    files:
+      - file: "content/testimonials.json"
+        label: "Testimonials List"
         name: "testimonials"
-        widget: "list"
         fields:
-          - {label: "Quote", name: "quote", widget: "text"}
-          - {label: "Name", name: "name", widget: "string"}
-          - {label: "Role", name: "role", widget: "string"}
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Message", name: "message", widget: "text" }
 
   - name: "blog"
     label: "Blog Posts"
-    file: "content/blog.json"
-    fields:
-      - label: "Posts"
+    files:
+      - file: "content/blog.json"
+        label: "Blog List"
         name: "blog"
-        widget: "list"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Excerpt", name: "excerpt", widget: "text"}
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Content", name: "content", widget: "markdown" }
+              - { label: "Date", name: "date", widget: "datetime" }
