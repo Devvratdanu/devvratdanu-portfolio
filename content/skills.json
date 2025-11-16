@@ -1,0 +1,12 @@
+[
+  {
+    "skill": "Excel",
+    "level": 95,
+    "icon": "assets/uploads/excel.png"
+  },
+  {
+    "skill": "Power BI",
+    "level": 90,
+    "icon": "assets/uploads/pbi.png"
+  }
+]
